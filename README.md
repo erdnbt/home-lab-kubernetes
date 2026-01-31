@@ -15,17 +15,12 @@ Think of Git as the single source of truth, and Flux as the controller that enfo
 
 ## Repo Layout
 
-This repo follows a Flux monorepo layout, with cluster configuration under `clusters/` and application manifests grouped by environment under `clusters/apps/`:
+https://fluxcd.io/flux/guides/repository-structure/#repository-structure
+
+This repo follows a Flux monorepo layout with top-level `clusters/`, and apps organized under `apps/`:
 
 ```
-clusters/
-  staging/
-    flux-system/
-      gotk-components.yaml
-      gotk-sync.yaml
-      kustomization.yaml
-    app.yaml
-  apps/
+apps/
     base/
       linkding/
         deployment.yaml
@@ -34,6 +29,13 @@ clusters/
     staging/
       linkding/
         kustomization.yaml
+clusters/  
+  staging/
+    flux-system/
+      gotk-components.yaml
+      gotk-sync.yaml
+      kustomization.yaml
+    app.yaml
 ```
 
 The `flux-system` manifests are generated and managed by Flux. Do not edit them by hand.
