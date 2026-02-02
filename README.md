@@ -20,22 +20,19 @@ https://fluxcd.io/flux/guides/repository-structure/#repository-structure
 This repo follows a Flux monorepo layout with top-level `clusters/`, and apps organized under `apps/`:
 
 ```
-apps/
-    base/
-      linkding/
-        deployment.yaml
-        kustomization.yaml
-        namespace.yaml
-    staging/
-      linkding/
-        kustomization.yaml
-clusters/  
-  staging/
-    flux-system/
-      gotk-components.yaml
-      gotk-sync.yaml
-      kustomization.yaml
-    app.yaml
+├── apps
+│   ├── base
+│   │   └── linkding
+│   └── staging
+│       └── linkding
+├── clusters
+│   └── staging
+│       └── flux-system
+├── docs
+└── monitoring
+    └── controllers
+        ├── base
+        └── staging
 ```
 
 The `flux-system` manifests are generated and managed by Flux. Do not edit them by hand.
